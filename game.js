@@ -26,9 +26,9 @@ let playerError = "Unknown play. Please enter Rock, Paper, or Scissors.";
 //         return playerTie;
 //         } else if { (playerSelection == "Rock" && computerSelection == "Paper")  // evaluate player is Rock
 //             return playerLose; 
-//         } else if { (playerSelection == "Rock" && computerSelection == "Scissors")
+//         } else if (playerSelection == "Rock" && computerSelection == "Scissors")
 //             return playerWin;
-//         } else if { (playerSelection == "Paper" && computerSelection == "Rock")
+//         } else if (playerSelection == "Paper" && computerSelection == "Rock")
 //             return playerWin;
 //         } else if { (playerSelection == "Paper" && computerSelection == "Scissors")
 //             return playerLose;
