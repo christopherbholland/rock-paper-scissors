@@ -2,29 +2,24 @@ function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // randomly pick a number
     switch (randomNumber) {  // set the output to one of the three options
         case 0:
-            return "Rock";
+            return "rock";
         case 1:
-            return "Paper";
+            return "paper";
         case 2:
-            return "Scissors";
+            return "scissors";
         default:
-            return "Unknown"; // this should never happen
+            return "unknown"; // this should never happen
     }
 }
 
 let computerSelection = getComputerChoice(); // assign the output to computer's selection
-const playerSelection = "Rock";
+const playerSelection = "rock";
 
+//return these strings at the end of the round to show the player's value and the computer's value
 let playerWin = "You win! " + playerSelection + " beats " + computerSelection + ".";
 let playerLose = "You lose! " + computerSelection + " beats " + playerSelection + ".";
 let playerTie = "It's a tie";
 let playerError = "Unknown play. Please enter Rock, Paper, or Scissors.";
-
-console.log(playerWin);
-console.log(playerLose);
-console.log(playerTie);
-console.log(playerError);
-
 
 // function playRound (playerSelection, computerSelection) {
 //     if (playerSelection === computerSelection) {
