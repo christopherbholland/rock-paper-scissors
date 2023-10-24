@@ -15,12 +15,15 @@ function getComputerChoice() {
 let computerSelection = getComputerChoice(); // assign the output to computer's selection
 const playerSelection = "Rock";
 
-let playerWin = ("You win!", playerSelection, "beats ", computerSelection, ".");
-let playerLose = ("You lose!", computerSelection, "beats ", playerSelection, ".");
-let playerTie = ("It's a tie");
-let playerError = ("Unknown play. Please enter Rock, Paper, or Scissors.")
+let playerWin = "You win! " + playerSelection + " beats " + computerSelection + ".";
+let playerLose = "You lose! " + computerSelection + " beats " + playerSelection + ".";
+let playerTie = "It's a tie";
+let playerError = "Unknown play. Please enter Rock, Paper, or Scissors.";
 
 console.log(playerWin);
+console.log(playerLose);
+console.log(playerTie);
+console.log(playerError);
 
 
 // function playRound (playerSelection, computerSelection) {
