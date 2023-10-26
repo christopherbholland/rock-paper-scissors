@@ -1,5 +1,6 @@
 const computerSelection = getComputerChoice(); // assign the output to computer's selection
-const playerSelection = "Rock";
+let playerChoice = "Rock";
+const playerSelection = playerChoice.toLowerCase();
 
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // randomly pick a number
@@ -21,7 +22,7 @@ let playerLose = "You lose! " + computerSelection + " beats " + playerSelection 
 let playerTie = "It's a tie";
 let playerError = "Unknown play. Please enter rock, paper, or scissors.";
 
-function playRound (.toLowerCase(playerSelection), computerSelection) {
+function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection)
         return playerTie;
          else if (playerSelection == "rock" && computerSelection == "paper")  // evaluate player is Rock
