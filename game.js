@@ -1,3 +1,6 @@
+const computerSelection = getComputerChoice(); // assign the output to computer's selection
+const playerSelection = "Rock";
+
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // randomly pick a number
     switch (randomNumber) {  // set the output to one of the three options
@@ -12,34 +15,37 @@ function getComputerChoice() {
     }
 }
 
-let computerSelection = getComputerChoice(); // assign the output to computer's selection
-const playerSelection = "rock";
-
 //return these strings at the end of the round to show the player's value and the computer's value
 let playerWin = "You win! " + playerSelection + " beats " + computerSelection + ".";
 let playerLose = "You lose! " + computerSelection + " beats " + playerSelection + ".";
 let playerTie = "It's a tie";
-let playerError = "Unknown play. Please enter Rock, Paper, or Scissors.";
+let playerError = "Unknown play. Please enter rock, paper, or scissors.";
 
-// function playRound (playerSelection, computerSelection) {
-//     if (playerSelection === computerSelection) {
-//         return playerTie;
-//         } else if { (playerSelection == "Rock" && computerSelection == "Paper")  // evaluate player is Rock
-//             return playerLose; 
-//         } else if (playerSelection == "Rock" && computerSelection == "Scissors")
-//             return playerWin;
-//         } else if (playerSelection == "Paper" && computerSelection == "Rock")
-//             return playerWin;
-//         } else if { (playerSelection == "Paper" && computerSelection == "Scissors")
-//             return playerLose;
-//         } else if { (playerSelection == "Scissors" && computerSelection == "Rock")
-//             return playerLose;
-//         } else if { (playerSelection == "Scissors" && computerSelection == "Paper")
-//             return playerWin;
-//         } else {
-//             return playerError;
-//         }    
-// }
+function playRound (.toLowerCase(playerSelection), computerSelection) {
+    if (playerSelection === computerSelection)
+        return playerTie;
+         else if (playerSelection == "rock" && computerSelection == "paper")  // evaluate player is Rock
+            return playerLose; 
+         else if (playerSelection == "rock" && computerSelection == "scissors")
+            return playerWin;
+         else if (playerSelection == "paper" && computerSelection == "rock")
+            return playerWin;
+         else if  (playerSelection == "paper" && computerSelection == "scissors")
+            return playerLose;
+         else if  (playerSelection == "scissors" && computerSelection == "rock")
+            return playerLose;
+         else if  (playerSelection == "scissors" && computerSelection == "paper")
+            return playerWin;
+         else 
+            return playerError;
+        }    
+
+console.log(playRound(playerSelection, computerSelection));
+console.log(computerSelection);
+
+
+
+
 
 // const playerSelection = "rock";
 // const computerSelection = getComputerChoice();
