@@ -39,8 +39,6 @@ let playerLose = "You lose! " + computerSelection + " beats " + playerChoice + "
 let playerTie = "It's a tie";
 let playerError = "Unknown play. Please enter rock, paper, or scissors.";
 
-console.log(playerChoice, computerSelection);
-
 function playRound () {
     if (playerChoice == computerSelection)
         return playerTie;
