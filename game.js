@@ -12,6 +12,7 @@ function getPlayerChoice() {
 //this is a function to get the computer's choice for the round
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // randomly pick a number
+    
     switch (randomNumber) {  // set the output to one of the three options
         case 0:
             return "rock";
@@ -23,8 +24,6 @@ function getComputerChoice() {
             return "unknown"; // this should never happen
     }
 }
-
-
 
 //evaluate the player's choice and computer's choice and output if the player wins or loses
 function playRound() {
@@ -38,9 +37,9 @@ function playRound() {
     // run through the comparison of playerChoice to computerSelection if it is not a tie
     } else if (
         // check for player win scenarios
-        (playerChoice == "rock" && computerSelection == "scissors") ||
-        (playerChoice == "paper" && computerSelection == "rock") ||
-        (playerChoice == "scissors" && computerSelection == "paper") 
+        (playerChoice === "rock" && computerSelection == "scissors") ||
+        (playerChoice === "paper" && computerSelection == "rock") ||
+        (playerChoice === "scissors" && computerSelection == "paper") 
      ) {
         // tell the user they won
         return "You win! " + playerChoice + " beats " + computerSelection + ".";
@@ -49,5 +48,7 @@ function playRound() {
         return "You lose! " + computerSelection + " beats " + playerChoice + ".";
     }
 }
+
 //play the game
-console.log(playRound());
+const result = playRound();
+console.log(result);
