@@ -56,22 +56,129 @@ function playRound() {
     }
 }
 
-//play the game
-const result = playRound();
-console.log(result);
+// Function to keep score
+// function keepScore() {
+// }
+// let playerScore = 0;
+// let computerScore = 0;
+// if (result.includes("win!")) {
+//     playerScore++;
+// } else {
+//     computerScore++;
+// }
 
-//Function to keep score
-function keepScore() {
-    }
+
+//Function to keep playing
+function game() {
     let playerScore = 0;
     let computerScore = 0;
-    if (result.includes("win!")) {
-        playerScore++;
-    } else {
-        computerScore++;
-}
+    // Round 1
+    const round = playRound()
+        console.log(round);
+    //Function to keep score
+            function keepScore() {
+                if (round.includes("win")) {
+                    playerScore++;
+                } else {
+                    computerScore++;
+                }
+            }
+        keepScore();
+        console.log(`You: ${playerScore} - Computer: ${computerScore}`);
+    // Round 2    
+    const round2 = playRound()
+    console.log(round2);
+    // Function to keep score
+        function keepScore2() {
+            if (round2.includes("win")) {
+                playerScore++;
+            } else {
+                computerScore++;
+            }
+        }
+    keepScore2();
+    console.log(`You: ${playerScore} - Computer: ${computerScore}`);
+    
+    // Round 3
+    const round3 = playRound()
+    console.log(round3);
+    // Function to keep score
+        function keepScore3() {
+            if (round3.includes("win")) {
+                playerScore++;
+            } else {
+                computerScore++;
+            }
+        }
+    keepScore3();
+    console.log(`You: ${playerScore} - Computer: ${computerScore}`);
+    
+    // Round 4
+    const round4 = playRound()
+    console.log(round4);
+    // Function to keep score
+        function keepScore4() {
+            if (round4.includes("win")) {
+                playerScore++;
+            } else {
+                computerScore++;
+            }
+        }
+    keepScore4();
+    console.log(`You: ${playerScore} - Computer: ${computerScore}`);
+    
+    // Round 5
+    const round5 = playRound()
+    console.log(round5);
+    // Function to keep score
+        function keepScore5() {
+            if (round5.includes("win")) {
+                playerScore++;
+            } else {
+                computerScore++;
+            }
+        }
+    keepScore5();
+    console.log(`You: ${playerScore} - Computer: ${computerScore}`);
+    
+    // Function to announce a winner
+        function declareWinner() {
+            if (playerScore > computerScore) {
+                return `Congratulations you win, ${playerScore} - ${computerScore}`
+            } else {
+                return `You lose, ${playerScore} - ${computerScore}`
+            }
+        }
 
-keepScore();
-console.log(playerScore, computerScore);
+     let finalResult = declareWinner();
+     console.log(finalResult);
+     
+
+    }
 
 
+ 
+
+game();
+
+//play the game
+// const result = playRound();
+// console.log(result);
+
+
+//Function to count rounds
+// function roundCount
+
+
+
+
+
+// keepScore();
+// console.log(playerScore, computerScore);
+
+
+// get player playerChoice
+// play round and get output
+// score the round
+// play 4 more times 
+// output winner
