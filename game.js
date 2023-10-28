@@ -24,36 +24,32 @@ function getComputerChoice() {
     }
 }
 
+    //return these strings at the end of the round to show the player's value and the computer's value
+// const playerWin = "You win! " + playerChoice + " beats " + computerSelection + ".";
+// const playerLose = "You lose! " + computerSelection + " beats " + playerChoice + ".";
+
+
 //evaluate the player's choice and computer's choice and output if the player wins or loses
 function playRound() {
     const playerChoice = getPlayerChoice();
     const computerSelection = getComputerChoice();
-    //return these strings at the end of the round to show the player's value and the computer's value
-    const playerWin = "You win! " + playerChoice + " beats " + computerSelection + ".";
-    const playerLose = "You lose! " + computerSelection + " beats " + playerChoice + ".";
-    const playerError = "Unknown play. Please enter rock, paper, or scissors.";
-    if (playerChoice == computerSelection) { // evaluate if this is a tie
+    
+   
+    if (playerChoice === computerSelection) { // evaluate if this is a tie
         alert("It's a tie. Play another round!"); // alert if there's a tie
         return playRound(); // play again if there's a tie
     // run through the comparison of playerChoice to computerSelection if it is not a tie
-        } else {
-        if (playerChoice == "rock" && computerSelection == "paper")
-    // for each comparison, return one of the strings above
-        return playerLose;  // lose -- paper beats rock
-        else if (playerChoice == "rock" && computerSelection == "scissors") 
-        return playerWin;  // win -- rock beats scissors
-        else if (playerChoice == "paper" && computerSelection == "rock")
-        return playerWin; // win -- paper covers rock
-        else if  (playerChoice == "paper" && computerSelection == "scissors")
-        return playerLose; // lose -- scissors cuts paper
-        else if  (playerChoice == "scissors" && computerSelection == "rock")
-        return playerLose; // lose -- rock breaks scissors
-        else if  (playerChoice == "scissors" && computerSelection == "paper")
-        return playerWin; // win -- scissors cuts paper
-        else
-        return playerError; // in case something goes wrong, return an error
-    }    
-
+    } else if (
+        // check for player win scenarios
+        (playerChoice == "rock" && computerSelection == "scissors") ||
+        (playerChoice == "paper" && computerSelection == "rock") ||
+        (playerChoice == "scissors" && computerSelection == "paper") 
+     ) {
+        return "You win! " + playerChoice + " beats " + computerSelection + ".";
+    } else {
+        // If it's not a tie and it's not a win, it's a loss for the player
+        return "You lose! " + computerSelection + " beats " + playerChoice + ".";
+    }
 }
 
 console.log(playRound());
