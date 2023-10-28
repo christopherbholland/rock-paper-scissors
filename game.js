@@ -1,10 +1,3 @@
-// const computerSelection = getComputerChoice(); // assign the output to computer's selection
-//let playerChoice = prompt("Rock, paper, or scissors?");
-//if (playerChoice.toLowerCase() == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
-  //  alert
-//}
-
-    
 function getPlayerChoice() { 
     let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
     if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
@@ -69,28 +62,28 @@ function game () {
             console.log(result);
 
             // Update scores based on result
-        if (result = playerWin) {
-            playerScore++;
-        } else if (result = playerLose) {
-            computerScore++;
-        }
-
-        gameRounds++;
-
-        console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-
-        if (playerScore < 3 && computerScore < 3) {
-            playNextRound(); // Play the next round
-        } else {
-            //end the game if someone wins 3
-            if (playerScore > computerScore) {
-                console.log("You win the game!");
-            } else {
-                console.log("You lose! Computer wins!");
-                
+            if (result.includes("win")) {
+                playerScore++;
+            } else if (result.includes("lose")) {
+                computerScore++;
             }
 
-            console.log(`Total rounds played: ${gameRounds}`);
+            gameRounds++;
+
+            console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
+
+            if (playerScore < 3 && computerScore < 3) {
+                playNextRound(); // Play the next round
+            } else {
+                //end the game if someone wins 3
+                if (playerScore > computerScore) {
+                    console.log("You win the game!");
+                } else {
+                    console.log("You lose! Computer wins!");
+                    
+                }
+
+                console.log(`Total rounds played: ${gameRounds}`);
 
             
                 
@@ -104,24 +97,3 @@ function game () {
     }
 
     game();
-
-
-  
-
-
-
-
-
-
-
-// // // function game(playRound)
-
-// // //         run playRound
-// // //         use return value to determine winner
-// if playerWin
-// if playerLose
-// if playerTie
-// // //         output result
-// // //         keep score if win, log 1
-// // //         play again x 4
-// // //         output winner
