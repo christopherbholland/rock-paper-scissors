@@ -1,10 +1,3 @@
-// const computerSelection = getComputerChoice(); // assign the output to computer's selection
-//let playerChoice = prompt("Rock, paper, or scissors?");
-//if (playerChoice.toLowerCase() == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
-  //  alert
-//}
-
-    
 function getPlayerChoice() { 
     let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
     if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
@@ -59,53 +52,3 @@ function playRound () {
         }    
 
 console.log(playRound());
-
-
-
-
-// // // function game(playRound)
-
-// // //         run playRound
-// // //         use return value to determine winner
-// // //         output result
-// // //         keep score
-// // //         play again x 4
-// // //         output winner
-
-// // console.log(playRound(playerSelection, computerSelection));
-// // console.log(computerSelection);
-
-
-
-
-
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection,computerSelection));
-
-
-// function game() {
-
-
-//     // } else if {
-//     // if (playerSelection = "Paper") { // evaluate player is Paper
-//     //     if (computerSelection = "Rock") {
-//     //         return playerWin;
-//     //     if (computerSelection = "Scissors") // computer wins
-//     //         return playerLose;
-//     //     }
-    // } else {
-    // if (playerSelection = "Scissors") {
-    //     if (computerSelection = "Rock") {
-    //         return playerLose;
-    //     } else if (computer = "Paper") { // player wins
-    //         return playerWin;
-    // } else {
-    //     return playerError;
-    //     }
-    //     }
-    //     }
-    //     }
-
-    //     }
-    // // 
