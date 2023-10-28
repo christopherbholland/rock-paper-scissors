@@ -59,3 +59,19 @@ function playRound() {
 //play the game
 const result = playRound();
 console.log(result);
+
+//Function to keep score
+function keepScore() {
+    }
+    let playerScore = 0;
+    let computerScore = 0;
+    if (result.includes("win!")) {
+        playerScore++;
+    } else {
+        computerScore++;
+}
+
+keepScore();
+console.log(playerScore, computerScore);
+
+
