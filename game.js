@@ -1,4 +1,9 @@
-//this is a function to get the player's choice for the round
+//Function to capitalize the first letter of each word
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+//Function to get the player's choice for the round
 function getPlayerChoice() { 
     let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase(); // this converts the selection to lowercase
     if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
@@ -9,7 +14,7 @@ function getPlayerChoice() {
     }
 }
 
-//this is a function to get the computer's choice for the round
+//Function to get the computer's choice for the round
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // randomly pick a number
     
@@ -42,10 +47,12 @@ function playRound() {
         (playerChoice === "scissors" && computerSelection == "paper") 
      ) {
         // tell the user they won
-        return "You win! " + playerChoice + " beats " + computerSelection + ".";
+        const result = titleCase(playerChoice) + " beats " + computerSelection;
+        return "You win! " + result + ".";
     } else {
         // If it's not a tie and it's not a win, it's a loss for the player
-        return "You lose! " + computerSelection + " beats " + playerChoice + ".";
+        const result = titleCase(computerSelection) + " beats " + playerChoice;
+        return "You lose! " + result + ".";
     }
 }
 
