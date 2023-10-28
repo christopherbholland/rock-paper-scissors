@@ -151,25 +151,3 @@ function game() {
  
 
 game();
-
-//play the game
-// const result = playRound();
-// console.log(result);
-
-
-//Function to count rounds
-// function roundCount
-
-
-
-
-
-// keepScore();
-// console.log(playerScore, computerScore);
-
-
-// get player playerChoice
-// play round and get output
-// score the round
-// play 4 more times 
-// output winner
