@@ -56,19 +56,8 @@ function playRound() {
     }
 }
 
-// Function to keep score
-// function keepScore() {
-// }
-// let playerScore = 0;
-// let computerScore = 0;
-// if (result.includes("win!")) {
-//     playerScore++;
-// } else {
-//     computerScore++;
-// }
 
-
-//Function to keep playing
+// Function to play the game
 function game() {
     let playerScore = 0;
     let computerScore = 0;
@@ -145,8 +134,10 @@ function game() {
         function declareWinner() {
             if (playerScore > computerScore) {
                 return `Congratulations you win, ${playerScore} - ${computerScore}`
-            } else {
+            } else if (playerScore < computerScore) {
                 return `You lose, ${playerScore} - ${computerScore}`
+            } else {
+                return `It's a tie, ${playerScore} - ${computerScore}`
             }
         }
 
