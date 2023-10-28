@@ -24,9 +24,6 @@ function getComputerChoice() {
     }
 }
 
-    //return these strings at the end of the round to show the player's value and the computer's value
-// const playerWin = "You win! " + playerChoice + " beats " + computerSelection + ".";
-// const playerLose = "You lose! " + computerSelection + " beats " + playerChoice + ".";
 
 
 //evaluate the player's choice and computer's choice and output if the player wins or loses
@@ -45,11 +42,12 @@ function playRound() {
         (playerChoice == "paper" && computerSelection == "rock") ||
         (playerChoice == "scissors" && computerSelection == "paper") 
      ) {
+        // tell the user they won
         return "You win! " + playerChoice + " beats " + computerSelection + ".";
     } else {
         // If it's not a tie and it's not a win, it's a loss for the player
         return "You lose! " + computerSelection + " beats " + playerChoice + ".";
     }
 }
-
+//play the game
 console.log(playRound());
