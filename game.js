@@ -30,15 +30,16 @@ function getComputerChoice() {
 }
 
 
-const playerChoice = getPlayerChoice();
-const computerSelection = getComputerChoice();
+let playerChoice = getPlayerChoice();
+let computerSelection = getComputerChoice();
 
 //return these strings at the end of the round to show the player's value and the computer's value
 let playerWin = "You win! " + playerChoice + " beats " + computerSelection + ".";
 let playerLose = "You lose! " + computerSelection + " beats " + playerChoice + ".";
-let playerTie = "It's a tie";
+let playerTie = "It's a tie. Play again!";
 let playerError = "Unknown play. Please enter rock, paper, or scissors.";
 
+//evaluate the player's choice and computer's choice and output if the player wins or loses
 function playRound () {
     if (playerChoice == computerSelection)
         return playerTie;
@@ -56,7 +57,59 @@ function playRound () {
             return playerWin;
         }    
 
-console.log(playRound());
+function game () {
+    let playerScore = 0;
+    let computerScore = 0;
+    let gameRounds = 0;
+    function playNextRound() {
+        if (gameRounds < 5) {
+            let playerChoice = getPlayerChoice();
+            let computerChoice = getComputerChoice();
+            let result = playRound(playerChoice, computerChoice);
+            console.log(result);
+
+            // Update scores based on result
+        if (result = playerWin) {
+            playerScore++;
+        } else if (result = playerLose) {
+            computerScore++;
+        }
+
+        gameRounds++;
+
+        console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
+
+        if (playerScore < 3 && computerScore < 3) {
+            playNextRound(); // Play the next round
+        } else {
+            //end the game if someone wins 3
+            if (playerScore > computerScore) {
+                console.log("You win the game!");
+            } else {
+                console.log("You lose! Computer wins!");
+                
+            }
+
+            console.log(`Total rounds played: ${gameRounds}`);
+
+            
+                
+            }
+        }
+        
+
+    }
+
+    playNextRound();
+    }
+
+    game();
+
+
+  
+
+
+
 
 
 
@@ -65,7 +118,10 @@ console.log(playRound());
 
 // // //         run playRound
 // // //         use return value to determine winner
+// if playerWin
+// if playerLose
+// if playerTie
 // // //         output result
-// // //         keep score
+// // //         keep score if win, log 1
 // // //         play again x 4
 // // //         output winner
