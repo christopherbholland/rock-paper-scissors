@@ -1,13 +1,15 @@
+//this is a function to get the player's choice for the round
 function getPlayerChoice() { 
-    let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
+    let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase(); // this converts the selection to lowercase
     if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
         return playerSelection;
-     } else {
+     } else { // if the player doesn't enter rock, paper, or scissors, we want them to re-enter it
         alert ("You can't play the game with that value. Choose rock, paper, or scissors.")
         return getPlayerChoice()
     }
 }
 
+//this is a function to get the computer's choice for the round
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // randomly pick a number
     switch (randomNumber) {  // set the output to one of the three options
@@ -22,23 +24,24 @@ function getComputerChoice() {
     }
 }
 
-
-let playerChoice = getPlayerChoice();
-let computerSelection = getComputerChoice();
-
-//return these strings at the end of the round to show the player's value and the computer's value
-let playerWin = "You win! " + playerChoice + " beats " + computerSelection + ".";
-let playerLose = "You lose! " + computerSelection + " beats " + playerChoice + ".";
-let playerTie = "It's a tie. Play again!";
-let playerError = "Unknown play. Please enter rock, paper, or scissors.";
-
 //evaluate the player's choice and computer's choice and output if the player wins or loses
 function playRound () {
-    if (playerChoice == computerSelection)
+    const playerChoice = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    //return these strings at the end of the round to show the player's value and the computer's value
+    const playerWin = "You win! " + playerChoice + " beats " + computerSelection + ".";
+    const playerLose = "You lose! " + computerSelection + " beats " + playerChoice + ".";
+    const playerTie = "It's a tie. Play again!";
+    const playerError = "Unknown play. Please enter rock, paper, or scissors.";
+
+
+    if (playerChoice == computerSelection) // if it's a tie, log that before continuing
         return playerTie;
-        else if (playerChoice == "rock" && computerSelection == "paper")  // evaluate player is Rock
+        // run through the comparison of playerChoice to computerSelection
+        else if (playerChoice == "rock" && computerSelection == "paper")
+        // for each comparison, return one of the strings above
             return playerLose; 
-         else if (playerChoice == "rock" && computerSelection == "scissors")
+         else if (playerChoice == "rock" && computerSelection == "scissors") 
             return playerWin;
          else if (playerChoice == "paper" && computerSelection == "rock")
             return playerWin;
@@ -48,56 +51,8 @@ function playRound () {
             return playerLose;
          else if  (playerChoice == "scissors" && computerSelection == "paper")
             return playerWin;
+         else
+            return playerError; // in case something goes wrong, return an error
         }    
 
-<<<<<<< HEAD
 console.log(playRound());
-=======
-function game () {
-    let playerScore = 0;
-    let computerScore = 0;
-    let gameRounds = 0;
-    function playNextRound() {
-        if (gameRounds < 5) {
-            let playerChoice = getPlayerChoice();
-            let computerChoice = getComputerChoice();
-            let result = playRound(playerChoice, computerChoice);
-            console.log(result);
-
-            // Update scores based on result
-            if (result.includes("win")) {
-                playerScore++;
-            } else if (result.includes("lose")) {
-                computerScore++;
-            }
-
-            gameRounds++;
-
-            console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-
-            if (playerScore < 3 && computerScore < 3) {
-                playNextRound(); // Play the next round
-            } else {
-                //end the game if someone wins 3
-                if (playerScore > computerScore) {
-                    console.log("You win the game!");
-                } else {
-                    console.log("You lose! Computer wins!");
-                    
-                }
-
-                console.log(`Total rounds played: ${gameRounds}`);
-
-            
-                
-            }
-        }
-        
-
-    }
-
-    playNextRound();
-    }
-
-    game();
->>>>>>> 94d5c2d2915502acbe7fdb737cb403547f88c626
